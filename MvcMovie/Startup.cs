@@ -50,6 +50,9 @@ namespace MvcMovie
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // 参照情報:https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs
+            //SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
