@@ -9,9 +9,12 @@ namespace MvcMovie.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new MvcMovieContext(
-                serviceProvider.GetRequiredService<DbContextOptions<MvcMovieContext>>()))
+            // 参照情報:
+            // https://stackoverflow.com/questions/46063945/cannot-resolve-dbcontext-in-asp-net-core-2-0
+            // https://github.com/aspnet/EntityFrameworkCore/issues/3070
+            using (var serviceScope = serviceProvider.CreateScope())
             {
+                var context = serviceScope.ServiceProvider.GetService<MvcMovieContext>();
                 // Look for any movies.
                 if (context.Movie.Any())
                 {
@@ -52,7 +55,14 @@ namespace MvcMovie.Models
                    }
                 );
                 context.SaveChanges();
+
             }
+
+            //using (var context = new MvcMovieContext(
+            //    serviceProvider.GetRequiredService<DbContextOptions<MvcMovieContext>>()))
+            //{
+               
+            //}
         }
     }
 }
