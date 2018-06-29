@@ -9,6 +9,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
 
+/// <summary>
+/// 以下のサイトのチュートリアル：
+///     https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/?view=aspnetcore-2.1
+///     <注意> 日本語でみるとサンプルコードが表示されない箇所があるので、英語版も参照すること。
+/// </summary>
 namespace MvcMovie
 {
     public class Startup
