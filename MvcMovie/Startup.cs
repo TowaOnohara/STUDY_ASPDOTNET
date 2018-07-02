@@ -56,8 +56,8 @@ namespace MvcMovie
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            // 初期データを追加。
-            SeedData.Initialize(app.ApplicationServices);
+            //// 初期データを追加。
+            ////SeedData.Initialize(app.ApplicationServices);
 
 
         }
